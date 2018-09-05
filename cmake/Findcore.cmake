@@ -1,8 +1,7 @@
-find_library( core_STATIC_LIBRARY libcore.a HINTS "${PROJECT_SOURCE_DIR}/dependency/runloop/dependency/core/distribution/library" )
-find_library( core_SHARED_LIBRARY NAMES libcore.so libcore.dylib HINTS "${PROJECT_SOURCE_DIR}/dependency/runloop/dependency/core/distribution/library" )
+find_library( core_STATIC_LIBRARY corvusoft-core HINTS "${PROJECT_SOURCE_DIR}/dependency/runloop/dependency/core/distribution/library" )
 find_path( core_INCLUDE "corvusoft/core/settings.hpp" HINTS "${PROJECT_SOURCE_DIR}/dependency/runloop/dependency/core/distribution/include" )
 
-if ( core_INCLUDE AND core_STATIC_LIBRARY AND core_SHARED_LIBRARY )
+if ( core_INCLUDE AND core_STATIC_LIBRARY)
     set( CORE_FOUND TRUE )
     message( STATUS "Located Core include at: ${core_INCLUDE}" )
     message( STATUS "Located Core static library at: ${core_STATIC_LIBRARY}" )
